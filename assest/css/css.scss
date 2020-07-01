@@ -1,0 +1,129 @@
+@import "_variables.scss";
+
+/*globals*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  font-family: "Rubik", "Roboto", sans-serif;
+  color: $textColor;
+}
+p,
+a {
+  font-family: "Roboto", sans-serif;
+  color: $textColor;
+}
+
+/* Menu */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 1rem 0 1rem;
+  .logo > img {
+    width: 200px;
+    height: auto;
+    display: inline;
+  }
+  ul {
+    display: none;
+    list-style: none;
+    li {
+      margin: 10px 15px;
+      a {
+        text-decoration: none;
+        font-weight: 700;
+      }
+    }
+  }
+  button {
+    display: flex;
+    span {
+      align-items: unset;
+      border-radius: 2px;
+      height: 5px;
+      transition: all 0.2s ease-in;
+      width: 35px;
+      background-color: #444;
+      display: block;
+      position: absolute;
+      right: 15px;
+      &:first-child {
+        top: 35px;
+        transform-origin: left top;
+      }
+      &:nth-child(2) {
+        top: 45px;
+        width: 25px;
+      }
+      &:nth-child(3) {
+        top: 55px;
+      }
+    }
+  }
+}
+
+/*Main*/
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "hero_text"
+  " hero_img";
+  
+  height: auto;
+  .hero_text {
+    grid-area: "hero_text";
+    display: grid;
+    align-items: center;
+    align-content: center;
+    margin: 20px;
+    h1 {
+      font-size: 3rem;
+      padding-bottom: 1em;
+      padding-top: 2em;
+      color: $baseColor;
+    }
+    p {
+      font-size: 0.99em;
+      line-height: 1.4em;
+      padding-bottom: 1em;
+      color: $baseColor;
+    }
+    a.btn {
+      background-color: #3d69ff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      color: #fff;
+      text-decoration: none;
+      margin-top: 2em;
+      width: 135px;
+    }
+}
+  .hero_img {
+    grid-area: "hero_img";
+    position: absolute;
+    z-index: -10;
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 100vh;
+      
+    }
+  }
+}
+
+@import "_media.scss";
